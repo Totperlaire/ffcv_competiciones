@@ -1,0 +1,291 @@
+/* Importación de Google Font: Inter (más redondeada) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif; 
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* ------------------------------------- */
+/* CABECERA (HEADER)                     */
+/* ------------------------------------- */
+
+header {
+    background-color: #0C182B;
+    background-image: linear-gradient(rgba(12, 24, 43, 0.85), rgba(12, 24, 43, 0.85)), url('https://storage.googleapis.com/gweb-aip-images/public/futbol_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken; 
+
+    padding: 30px 0 0; 
+    position: relative;
+    border-bottom: 5px solid #ff6600;
+    
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* NUEVO CONTENEDOR CENTRAL: Simula los márgenes del 'main' */
+.header-content-wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px; 
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTENEDOR SUPERIOR: Logo (Izquierda) y Menú (Centro) */
+.header-top {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding-bottom: 20px; 
+    width: 100%; 
+}
+
+.logo-container {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0; 
+    width: 250px; 
+    text-align: left;
+}
+
+.logo-container img {
+    height: 55px; 
+    display: block;
+}
+
+/* Navegación (Centrada en el espacio restante) */
+nav {
+    flex-grow: 1; 
+    text-align: center; 
+}
+
+nav .menu {
+    display: flex;
+    justify-content: center; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav .menu li {
+    margin: 0 10px; 
+    position: relative;
+    padding-bottom: 5px; 
+    transition: all 0.2s ease;
+}
+
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 15px; 
+    display: block;
+    transition: color 0.3s ease;
+}
+
+nav .menu li:hover {
+    border-bottom: 3px solid #ff6600;
+}
+
+nav .menu li:hover a {
+    color: #ff6600; 
+}
+
+nav .menu li.active {
+    border-bottom: none;
+}
+
+nav .menu li.active a {
+    color: #0C182B; 
+    background-color: #ff6600; 
+    border-radius: 999px; 
+    font-size: 16px; 
+    padding: 6px 17px; 
+}
+
+
+nav .menu .submenu {
+    display: none;
+    position: absolute;
+    background-color: #0C182B; 
+    top: 100%;
+    right: 0; 
+    left: auto;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 4px;
+    z-index: 10;
+    min-width: 180px;
+    text-align: left;
+    border-top: 3px solid #ff6600;
+}
+
+nav .menu .submenu li:hover {
+    background-color: #0033a0;
+    border-bottom: none;
+}
+
+nav .menu .dropdown:hover .submenu {
+    display: block;
+}
+
+
+/* ------------------------------------- */
+/* CONTENIDO INFERIOR: Título y Carrusel  */
+/* ------------------------------------- */
+
+.header-bottom {
+    padding: 0 0 20px 0; 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    width: 100%; 
+}
+
+.section-title {
+    color: white; 
+    /* AUMENTO DE TAMAÑO DE FUENTE: 38px */
+    font-size: 38px;
+    font-weight: 700;
+    text-align: left; 
+    margin-bottom: 40px; 
+    text-transform: uppercase;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    width: 100%; 
+    flex-grow: 1;
+}
+
+.carousel-arrow {
+    color: white; 
+    font-size: 24px; 
+    text-decoration: none;
+    cursor: pointer;
+    
+    background-color: transparent; 
+    border-radius: 0; 
+    width: auto; 
+    height: auto; 
+    padding: 5px; 
+    display: block; 
+    
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+    box-shadow: none;
+    transform: none;
+}
+
+.carousel-arrow:hover {
+    color: #ff6600;
+    background-color: transparent;
+}
+
+
+.carousel-dates {
+    display: flex;
+    gap: 8px; 
+    overflow-x: auto; 
+    padding-bottom: 5px; 
+    flex-grow: 1; 
+    max-width: 100%; 
+}
+
+.carousel-date {
+    background-color: transparent; 
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 999px; 
+    padding: 8px 15px; 
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap; 
+    text-align: center;
+    
+    display: block; 
+    line-height: 1;
+}
+
+.carousel-date:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ff6600;
+}
+
+.carousel-date.active {
+    background-color: transparent; 
+    color: #ff6600; 
+    border: 2px solid #ff6600; 
+    padding: 7px 14px; 
+}
+
+
+/* MAIN CONTENT Y VISIBILIDAD DE SECCIONES */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 40px;
+    display: none; 
+}
+
+section.active {
+    display: block;
+}
+
+/* ... (Resto de estilos) ... */
+section h2 {
+    color: #0033a0; 
+    border-bottom: 2px solid #ff6600;
+    padding-bottom: 10px;
+    font-size: 24px;
+}
+
+.content-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 100px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #0033a0;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #0033a0;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
